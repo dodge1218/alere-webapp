@@ -1,8 +1,10 @@
 import Link from "next/link";
-import { Home, Search, SlidersHorizontal, TicketPercent, MapPin } from "lucide-react";
+import { Home, Search, SlidersHorizontal, TicketPercent, MapPin, UserCircle2 } from "lucide-react";
+import { signOutAction } from "@/app/auth/sign-in/actions";
 
 const nav = [
   { href: "/app", label: "Overview", icon: Home },
+  { href: "/app/onboarding", label: "Onboarding", icon: UserCircle2 },
   { href: "/app/discover", label: "Discover", icon: Search },
   { href: "/app/preferences", label: "Preferences", icon: SlidersHorizontal },
   { href: "/app/coupons", label: "Coupons", icon: TicketPercent },
@@ -26,6 +28,9 @@ export function AppShell({ title, children }: { title: string; children: React.R
               );
             })}
           </nav>
+          <form action={signOutAction} className="mt-5">
+            <button className="w-full rounded-xl border border-white/20 px-3 py-2 text-sm text-slate-200 hover:bg-white/10">Sign out</button>
+          </form>
         </aside>
         <main className="space-y-4">
           <header className="rounded-2xl border border-white/10 bg-white/5 p-5">
