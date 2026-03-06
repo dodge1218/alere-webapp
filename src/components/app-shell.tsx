@@ -1,11 +1,12 @@
 import Link from "next/link";
-import { Home, Search, SlidersHorizontal, TicketPercent, MapPin, UserCircle2 } from "lucide-react";
+import { Home, Search, SlidersHorizontal, TicketPercent, MapPin, UserCircle2, Activity } from "lucide-react";
 import { signOutAction } from "@/app/auth/sign-in/actions";
 
 const nav = [
   { href: "/app", label: "Overview", icon: Home },
   { href: "/app/onboarding", label: "Onboarding", icon: UserCircle2 },
   { href: "/app/discover", label: "Discover", icon: Search },
+  { href: "/app/tracking", label: "Tracking", icon: Activity },
   { href: "/app/preferences", label: "Preferences", icon: SlidersHorizontal },
   { href: "/app/coupons", label: "Coupons", icon: TicketPercent },
   { href: "/app/stores", label: "Stores", icon: MapPin },

@@ -12,7 +12,7 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(url);
   }
 
-  if (pathname.startsWith("/api/v1/profile") && !user) {
+  if ((pathname.startsWith("/api/v1/profile") || pathname.startsWith("/api/v1/logs")) && !user) {
     return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   }
 
@@ -20,5 +20,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/app/:path*", "/api/v1/profile"],
+  matcher: ["/app/:path*", "/api/v1/profile", "/api/v1/logs"],
 };
